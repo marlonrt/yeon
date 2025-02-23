@@ -20,34 +20,48 @@ header {
     background-color: #fff;
     color: #333;
     padding: 20px;
-    text-align: center;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    position: relative;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    text-align: center;
+    flex-grow: 1;
 }
 
 header .logo img {
-    height: 150px;
+    height: 100px;
+}
+
+header .phrase {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
 }
 
 .language-selector {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: flex-end;
     position: absolute;
     right: 20px;
     top: 20px;
-    display: flex;
-    gap: 10px;
 }
 
 .language-selector img {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
 }
 
 .language-selector span {
-    font-size: 32px;
+    font-size: 24px;
     cursor: pointer;
 }
 
@@ -67,18 +81,12 @@ header .logo img {
     text-decoration: none;
 }
 
-.phrase {
-    text-align: center;
-    font-size: 18px;
-    color: #666;
-    margin-top: 10px;
-}
-
 main {
     padding: 20px;
     width: 100%;
     max-width: 1200px;
     flex: 1;
+    margin-top: 150px; /* Adjusted for fixed header */
 }
 
 section {
@@ -187,6 +195,97 @@ footer {
     padding: 10px;
     text-align: center;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.menu-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .navbar-brand img {
+    height: 50px;
+}
+
+.navbar .linkedin a {
+    font-size: 24px;
+}
+
+.navbar .language-selector span {
+    font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    .language-selector {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .linkedin {
+        font-size: 24px;
+    }
+
+    header .logo img {
+        height: 80px;
+    }
+
+    header .phrase {
+        font-size: 14px;
+    }
+
+    #jogos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .game {
+        height: 300px;
+    }
+
+    .store-icons a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-selector {
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .linkedin {
+        font-size: 24px;
+    }
+
+    #jogos {
+        grid-template-columns: 1fr;
+    }
+
+    .game {
+        height: 250px;
+    }
+
+    .store-icons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .store-icons a {
+        font-size: 16px;
+    }
 }

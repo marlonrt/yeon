@@ -1,0 +1,238 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Fundo do site branco */
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    /* Remover a linha da navbar */
+    box-shadow: none;
+}
+
+.logo {
+    height: 50px;
+}
+
+.quote {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.social-flags {
+    display: flex;
+    align-items: center;
+}
+
+.social-flags a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #0077b5; /* LinkedIn color */
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-flags a:hover {
+    color: #005582; /* Efeito de hover no LinkedIn */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown i {
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.dropdown i:hover {
+    color: #555; /* Efeito de hover no ícone de globo */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1;
+    flex-direction: column;
+}
+
+.dropdown-content span {
+    display: block;
+    margin: 5px 0;
+    font-size: 1.5em;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.flag {
+    cursor: pointer; /* Indicar que é clicável */
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    width: 90%;
+    aspect-ratio: 1920 / 622; /* Ajustar a proporção dos cards */
+    perspective: 1000px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efeito de hover mais suave */
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-size: cover;
+    background-position: center;
+}
+
+.card-back {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com transparência */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    text-align: center; /* Centralizar o texto */
+}
+
+.card:hover .card-back {
+    opacity: 1;
+}
+
+.card-back h3, .card-back p {
+    font-size: 1.2em;
+    text-align: center; /* Centralizar o texto */
+}
+
+.game-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center; /* Centralizar os ícones de download */
+}
+
+.game-links a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.game-links a:hover {
+    color: #6A0DAD; /* Efeito de hover nos ícones de jogos para roxo escuro */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+    .logo {
+        height: 30px;
+    }
+
+    .quote {
+        font-size: 0.7em; /* Diminuir o tamanho da frase em mobile */
+    }
+
+    .social-flags a, .dropdown i, .dropdown-content span {
+        font-size: 1em;
+    }
+
+    .card {
+        width: 100%;
+        aspect-ratio: 1920 / 622; /* Ajustar a proporção dos cards em mobile */
+    }
+
+    .card-back {
+        padding: 10px; /* Ajustar o padding dos cards em mobile */
+        justify-content: flex-start; /* Mover o conteúdo para cima */
+    }
+
+    .card-back h3 {
+        font-size: 0.8em; /* Diminuir o tamanho do título dos jogos em mobile */
+    }
+
+    .card-back p {
+        font-size: 0.7em; /* Diminuir o tamanho do texto dos jogos em mobile */
+    }
+
+    .game-links {
+        margin-top: 5px; /* Ajustar a margem superior dos ícones de download */
+    }
+
+    .game-links a {
+        font-size: 0.9em; /* Ajustar o tamanho dos ícones de download em mobile */
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 601px) {
+    .logo {
+        height: 70px;
+    }
+
+    .quote {
+        font-size: 1.5em;
+    }
+
+    .social-flags a, .dropdown i, .dropdown-content span {
+        font-size: 1.5em;
+    }
+
+    .card {
+        width: 70%;
+        aspect-ratio: 1920 / 622; /* Ajustar a proporção dos cards em desktop */
+    }
+
+    .card-back h3, .card-back p {
+        font-size: 1.3em;
+    }
+
+    .game-links a {
+        font-size: 1.5em;
+    }
+}

@@ -4,6 +4,9 @@ body {
     padding: 0;
     background-color: #fff; /* Fundo do site branco */
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garantir que o body ocupe a altura total da viewport */
 }
 
 .navbar {
@@ -88,6 +91,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    flex-grow: 1; /* Permitir que as cards ocupem o espaço disponível */
 }
 
 .card {
@@ -139,6 +143,7 @@ body {
 .card-back h3, .card-back p {
     font-size: 1.2em;
     text-align: center; /* Centralizar o texto */
+    word-wrap: break-word; /* Quebrar palavras longas */
 }
 
 .game-links {
@@ -166,10 +171,11 @@ footer {
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
     font-size: 0.9em;
     color: #777;
+    margin-top: auto; /* Colar a footbar no final da página */
 }
 
 /* Mobile styles */
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     .logo {
         height: 30px;
     }
@@ -190,6 +196,7 @@ footer {
     .card-back {
         padding: 10px; /* Ajustar o padding dos cards em mobile */
         justify-content: flex-start; /* Mover o conteúdo para cima */
+        overflow-y: auto; /* Permitir rolagem vertical */
     }
 
     .card-back h3 {
@@ -209,8 +216,117 @@ footer {
     }
 }
 
+/* Estilos para telas menores que 1200px */
+@media (max-width: 1200px) {
+    .logo {
+        height: 40px;
+    }
+
+    .quote {
+        font-size: 1em; /* Ajustar o tamanho da frase */
+    }
+
+    .social-flags a, .dropdown i, .dropdown-content span {
+        font-size: 1.2em;
+    }
+
+    .card-back h3 {
+        font-size: 1em; /* Ajustar o tamanho do título dos jogos */
+    }
+
+    .card-back p {
+        font-size: 0.9em; /* Ajustar o tamanho do texto dos jogos */
+    }
+
+    .game-links a {
+        font-size: 1.2em; /* Ajustar o tamanho dos ícones de download */
+    }
+}
+
+/* Estilos para telas entre 1200px e 420px */
+@media (max-width: 1200px) and (min-width: 421px) {
+    .logo {
+        height: 30px;
+    }
+
+    .quote {
+        font-size: 0.8em; /* Ajustar o tamanho da frase */
+    }
+
+    .social-flags a, .dropdown i, .dropdown-content span {
+        font-size: 1em;
+    }
+
+    .card-back h3 {
+        font-size: 0.9em; /* Ajustar o tamanho do título dos jogos */
+    }
+
+    .card-back p {
+        font-size: 0.8em; /* Ajustar o tamanho do texto dos jogos */
+    }
+
+    .game-links a {
+        font-size: 1em; /* Ajustar o tamanho dos ícones de download */
+    }
+}
+
+/* Estilos para telas menores que 420px */
+@media (max-width: 420px) {
+    .logo {
+        height: 20px;
+    }
+
+    .quote {
+        font-size: 0.6em; /* Ajustar o tamanho da frase */
+    }
+
+    .social-flags a, .dropdown i, .dropdown-content span {
+        font-size: 0.8em;
+    }
+
+    .card-back h3 {
+        font-size: 0.7em; /* Ajustar o tamanho do título dos jogos */
+    }
+
+    .card-back p {
+        font-size: 0.6em; /* Ajustar o tamanho do texto dos jogos */
+    }
+
+    .game-links a {
+        font-size: 0.8em; /* Ajustar o tamanho dos ícones de download */
+    }
+}
+
 /* Desktop styles */
-@media (min-width: 601px) {
+@media (min-width: 1001px) {
+    .logo {
+        height: 70px;
+    }
+
+    .quote {
+        font-size: 1.5em;
+    }
+
+    .social-flags a, .dropdown i, .dropdown-content span {
+        font-size: 1.5em;
+    }
+
+    .card {
+        width: 70%;
+        aspect-ratio: 1920 / 622; /* Ajustar a proporção dos cards em desktop */
+    }
+
+    .card-back h3, .card-back p {
+        font-size: 1.3em;
+    }
+
+    .game-links a {
+        font-size: 1.5em;
+    }
+}
+
+/* Estilos para telas maiores que 1200px */
+@media (min-width: 1201px) {
     .logo {
         height: 70px;
     }

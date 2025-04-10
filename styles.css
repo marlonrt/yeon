@@ -1,0 +1,688 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Fundo do site branco */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garantir que o body ocupe a altura total da viewport */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    /* Remover a linha da navbar */
+    box-shadow: none;
+}
+
+.logo {
+    height: 50px;
+}
+
+.quote {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.social-flags {
+    display: flex;
+    align-items: center;
+}
+
+.social-flags a {
+    margin-right: 10px;
+<<<<<<< HEAD
+    text-decoration: none;      
+    color: #333;
+=======
+    text-decoration: none;
+    color: #0077b5; /* LinkedIn color */
+>>>>>>> origin/main
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-flags a:hover {
+<<<<<<< HEAD
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-flags a:hover i {
+    color: #555;
+=======
+    color: #005582; /* Efeito de hover no LinkedIn */
+>>>>>>> origin/main
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown i {
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.dropdown i:hover {
+    color: #555; /* Efeito de hover no ícone de globo */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1;
+    flex-direction: column;
+}
+
+.dropdown-content span {
+    display: block;
+    margin: 5px 0;
+    font-size: 1.5em;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.flag {
+    cursor: pointer; /* Indicar que é clicável */
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+<<<<<<< HEAD
+    flex-grow: 1;
+    gap: 20px;
+=======
+    flex-grow: 1; /* Permitir que as cards ocupem o espaço disponível */
+>>>>>>> origin/main
+}
+
+.card {
+    width: 90%;
+<<<<<<< HEAD
+    aspect-ratio: 1920 / 622;
+    perspective: 1000px;
+    margin-bottom: 0;
+=======
+    aspect-ratio: 1920 / 622; /* Ajustar a proporção dos cards */
+    perspective: 1000px;
+    margin-bottom: 20px;
+>>>>>>> origin/main
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.card:first-child {
+    aspect-ratio: 16 / 9;
+}
+
+.card:hover {
+    transform: scale(1.05);
+=======
+    transition: transform 0.6s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efeito de hover mais suave */
+>>>>>>> origin/main
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+<<<<<<< HEAD
+=======
+    backface-visibility: hidden;
+>>>>>>> origin/main
+}
+
+.card-front {
+    background-size: cover;
+    background-position: center;
+<<<<<<< HEAD
+    background-repeat: no-repeat;
+}
+
+.card-front video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-back {
+    background-color: rgba(255, 255, 255, 0.8);
+=======
+}
+
+.card-back {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com transparência */
+>>>>>>> origin/main
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+<<<<<<< HEAD
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+}
+
+/* Desktop: hover mostra o conteúdo */
+@media (min-width: 1001px) {
+.card:hover .card-back {
+    opacity: 1;
+    }
+}
+
+/* Mobile: clique mostra/esconde o conteúdo */
+@media (max-width: 1000px) {
+    .card.is-flipped .card-back {
+        opacity: 1;
+    }
+    
+    .card:hover {
+        transform: none;
+    }
+    
+    .card:hover .card-back {
+        opacity: 0;
+    }
+=======
+    transition: opacity 0.6s ease-in-out;
+    text-align: center; /* Centralizar o texto */
+}
+
+.card:hover .card-back {
+    opacity: 1;
+>>>>>>> origin/main
+}
+
+.card-back h3, .card-back p {
+    font-size: 1.2em;
+<<<<<<< HEAD
+    text-align: center;
+    word-wrap: break-word;
+=======
+    text-align: center; /* Centralizar o texto */
+    word-wrap: break-word; /* Quebrar palavras longas */
+>>>>>>> origin/main
+}
+
+.game-links {
+    margin-top: 10px;
+    display: flex;
+<<<<<<< HEAD
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+=======
+    justify-content: center; /* Centralizar os ícones de download */
+>>>>>>> origin/main
+}
+
+.game-links a {
+    margin: 0 10px;
+    color: #333;
+<<<<<<< HEAD
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: all 0.3s;
+    padding: 5px 10px;
+}
+
+.game-links a:hover {
+    color: #6A0DAD;
+    transform: translateY(-2px);
+}
+
+.game-links a.trailer-btn {
+    font-weight: bold;
+}
+
+.game-links i {
+    font-size: 1.5em;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.game-links a:hover i {
+    color: #6A0DAD;
+=======
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.game-links a:hover {
+    color: #6A0DAD; /* Efeito de hover nos ícones de jogos para roxo escuro */
+>>>>>>> origin/main
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+    color: #777;
+    margin-top: auto; /* Colar a footbar no final da página */
+}
+
+/* Mobile styles */
+@media (max-width: 1000px) {
+    .logo {
+        height: 30px;
+    }
+
+    .quote {
+<<<<<<< HEAD
+        font-size: 0.7em;
+=======
+        font-size: 0.7em; /* Diminuir o tamanho da frase em mobile */
+>>>>>>> origin/main
+    }
+
+    .social-flags a, .dropdown i, .dropdown-content span {
+        font-size: 1em;
+    }
+
+    .card {
+        width: 100%;
+<<<<<<< HEAD
+        aspect-ratio: 1920 / 622;
+    }
+
+    .card-back {
+        padding: 10px;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+
+    .card-back h3 {
+        font-size: 0.8em;
+    }
+
+    .card-back p {
+        font-size: 0.7em;
+    }
+
+    .game-links {
+        gap: 5px;
+    }
+
+    .game-links a {
+        font-size: 0.9em;
+        padding: 3px 8px;
+        margin: 0 5px;
+    }
+
+    .game-links i {
+        font-size: 1.2em;
+=======
+        aspect-ratio: 1920 / 622; /* Ajustar a proporção dos cards em mobile */
+    }
+
+    .card-back {
+        padding: 10px; /* Ajustar o padding dos cards em mobile */
+        justify-content: flex-start; /* Mover o conteúdo para cima */
+        overflow-y: auto; /* Permitir rolagem vertical */
+    }
+
+    .card-back h3 {
+        font-size: 0.8em; /* Diminuir o tamanho do título dos jogos em mobile */
+    }
+
+    .card-back p {
+        font-size: 0.7em; /* Diminuir o tamanho do texto dos jogos em mobile */
+    }
+
+    .game-links {
+        margin-top: 5px; /* Ajustar a margem superior dos ícones de download */
+    }
+
+    .game-links a {
+        font-size: 0.9em; /* Ajustar o tamanho dos ícones de download em mobile */
+>>>>>>> origin/main
+    }
+}
+
+/* Estilos para telas menores que 1200px */
+@media (max-width: 1200px) {
+<<<<<<< HEAD
+    /* Remover este media query */
+}
+
+@media (max-width: 1200px) and (min-width: 421px) {
+    /* Remover este media query */
+    }
+
+@media (max-width: 420px) {
+    /* Remover este media query */
+    }
+
+@media (min-width: 421px) and (max-width: 768px) {
+    /* Remover este media query */
+    }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Remover este media query */
+    }
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    /* Remover este media query */
+    }
+
+@media (min-width: 1441px) {
+    /* Remover este media query */
+    }
+
+@media (max-width: 768px) {
+    /* Remover este media query */
+}
+
+@media (max-width: 420px) {
+    /* Remover este media query */
+}
+
+@media (min-width: 1001px) {
+    /* Remover este media query */
+}
+
+@media (min-width: 1201px) {
+    /* Remover este media query */
+=======
+    .logo {
+        height: 40px;
+    }
+
+    .quote {
+        font-size: 1em; /* Ajustar o tamanho da frase */
+    }
+
+    .social-flags a, .dropdown i, .dropdown-content span {
+        font-size: 1.2em;
+    }
+
+    .card-back h3 {
+        font-size: 1em; /* Ajustar o tamanho do título dos jogos */
+    }
+
+    .card-back p {
+        font-size: 0.9em; /* Ajustar o tamanho do texto dos jogos */
+    }
+
+    .game-links a {
+        font-size: 1.2em; /* Ajustar o tamanho dos ícones de download */
+    }
+}
+
+/* Estilos para telas entre 1200px e 420px */
+@media (max-width: 1200px) and (min-width: 421px) {
+    .logo {
+        height: 30px;
+    }
+
+    .quote {
+        font-size: 0.8em; /* Ajustar o tamanho da frase */
+    }
+
+    .social-flags a, .dropdown i, .dropdown-content span {
+        font-size: 1em;
+    }
+
+    .card-back h3 {
+        font-size: 0.9em; /* Ajustar o tamanho do título dos jogos */
+    }
+
+    .card-back p {
+        font-size: 0.8em; /* Ajustar o tamanho do texto dos jogos */
+    }
+
+    .game-links a {
+        font-size: 1em; /* Ajustar o tamanho dos ícones de download */
+    }
+}
+
+/* Estilos para telas menores que 420px */
+@media (max-width: 420px) {
+    .logo {
+        height: 20px;
+    }
+
+    .quote {
+        font-size: 0.6em; /* Ajustar o tamanho da frase */
+    }
+
+    .social-flags a, .dropdown i, .dropdown-content span {
+        font-size: 0.8em;
+    }
+
+    .card-back h3 {
+        font-size: 0.7em; /* Ajustar o tamanho do título dos jogos */
+    }
+
+    .card-back p {
+        font-size: 0.6em; /* Ajustar o tamanho do texto dos jogos */
+    }
+
+    .game-links a {
+        font-size: 0.8em; /* Ajustar o tamanho dos ícones de download */
+    }
+>>>>>>> origin/main
+}
+
+/* Desktop styles */
+@media (min-width: 1001px) {
+    .logo {
+        height: 70px;
+    }
+
+    .quote {
+        font-size: 1.5em;
+    }
+
+    .social-flags a, .dropdown i, .dropdown-content span {
+        font-size: 1.5em;
+    }
+
+    .card {
+        width: 70%;
+        aspect-ratio: 1920 / 622; /* Ajustar a proporção dos cards em desktop */
+    }
+
+<<<<<<< HEAD
+    .card-front {
+        background-size: contain;
+=======
+    .card-back h3, .card-back p {
+        font-size: 1.3em;
+    }
+
+    .game-links a {
+        font-size: 1.5em;
+    }
+}
+
+/* Estilos para telas maiores que 1200px */
+@media (min-width: 1201px) {
+    .logo {
+        height: 70px;
+    }
+
+    .quote {
+        font-size: 1.5em;
+    }
+
+    .social-flags a, .dropdown i, .dropdown-content span {
+        font-size: 1.5em;
+    }
+
+    .card {
+        width: 70%;
+        aspect-ratio: 1920 / 622; /* Ajustar a proporção dos cards em desktop */
+>>>>>>> origin/main
+    }
+
+    .card-back h3, .card-back p {
+        font-size: 1.3em;
+    }
+
+    .game-links a {
+<<<<<<< HEAD
+        font-size: 1.2em;
+        padding: 5px 15px;
+    }
+
+    .game-links i {
+        font-size: 1.5em;
+    }
+
+    .card.is-flipped {
+        transform: none;
+    }
+
+    .card.is-flipped .card-back {
+        opacity: 0;
+    }
+}
+
+/* Estilos do Modal de Vídeo */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ajustes para mobile */
+@media (max-width: 1000px) {
+    .modal-content {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .close {
+        right: 10px;
+        top: 5px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 420px) {
+    .modal-content {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .close {
+        right: 5px;
+        top: 2px;
+        font-size: 20px;
+    }
+}
+
+.card-links a {
+    color: #333;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.card-links a:hover {
+    color: #666;
+}
+
+.itch-btn:hover {
+    color: #fa5c5c;
+}
+
+.x-btn:hover {
+    color: #000000;
+}
+
+.tiktok-btn:hover {
+    color: #000000;
+}
+
+/* Mobile styles */
+@media (max-width: 1000px) {
+    .card-links a {
+        font-size: 1.2em;
+        margin: 0 8px;
+    }
+}
+
+=======
+        font-size: 1.5em;
+    }
+}
+>>>>>>> origin/main

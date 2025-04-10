@@ -1,0 +1,477 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Fundo do site branco */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garantir que o body ocupe a altura total da viewport */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    /* Remover a linha da navbar */
+    box-shadow: none;
+}
+
+.logo {
+    height: 50px;
+}
+
+.quote {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.social-flags {
+    display: flex;
+    align-items: center;
+}
+
+.social-flags a {
+    margin-right: 10px;
+    text-decoration: none;      
+    color: #333;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-flags a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-flags a:hover i {
+    color: #555;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown i {
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.dropdown i:hover {
+    color: #555; /* Efeito de hover no ícone de globo */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1;
+    flex-direction: column;
+}
+
+.dropdown-content span {
+    display: block;
+    margin: 5px 0;
+    font-size: 1.5em;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.flag {
+    cursor: pointer; /* Indicar que é clicável */
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    flex-grow: 1;
+    gap: 20px;
+}
+
+.card {
+    width: 90%;
+    aspect-ratio: 1920 / 622;
+    perspective: 1000px;
+    margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.card:first-child {
+    aspect-ratio: 16 / 9;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card-front {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-front video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-back {
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+}
+
+/* Desktop: hover mostra o conteúdo */
+@media (min-width: 1001px) {
+.card:hover .card-back {
+    opacity: 1;
+    }
+}
+
+/* Mobile: clique mostra/esconde o conteúdo */
+@media (max-width: 1000px) {
+    .card.is-flipped .card-back {
+        opacity: 1;
+    }
+    
+    .card:hover {
+        transform: none;
+    }
+    
+    .card:hover .card-back {
+        opacity: 0;
+    }
+}
+
+.card-back h3, .card-back p {
+    font-size: 1.2em;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.game-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.game-links a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: all 0.3s;
+    padding: 5px 10px;
+}
+
+.game-links a:hover {
+    color: #6A0DAD;
+    transform: translateY(-2px);
+}
+
+.game-links a.trailer-btn {
+    font-weight: bold;
+}
+
+.game-links i {
+    font-size: 1.5em;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.game-links a:hover i {
+    color: #6A0DAD;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+    color: #777;
+    margin-top: auto; /* Colar a footbar no final da página */
+}
+
+/* Mobile styles */
+@media (max-width: 1000px) {
+    .logo {
+        height: 30px;
+    }
+
+    .quote {
+        font-size: 0.7em;
+    }
+
+    .social-flags a, .dropdown i, .dropdown-content span {
+        font-size: 1em;
+    }
+
+    .card {
+        width: 100%;
+        aspect-ratio: 1920 / 622;
+    }
+
+    .card-back {
+        padding: 10px;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+
+    .card-back h3 {
+        font-size: 0.8em;
+    }
+
+    .card-back p {
+        font-size: 0.7em;
+    }
+
+    .game-links {
+        gap: 5px;
+    }
+
+    .game-links a {
+        font-size: 0.9em;
+        padding: 3px 8px;
+        margin: 0 5px;
+    }
+
+    .game-links i {
+        font-size: 1.2em;
+    }
+}
+
+/* Estilos para telas menores que 1200px */
+@media (max-width: 1200px) {
+    /* Remover este media query */
+}
+
+@media (max-width: 1200px) and (min-width: 421px) {
+    /* Remover este media query */
+    }
+
+@media (max-width: 420px) {
+    /* Remover este media query */
+    }
+
+@media (min-width: 421px) and (max-width: 768px) {
+    /* Remover este media query */
+    }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Remover este media query */
+    }
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    /* Remover este media query */
+    }
+
+@media (min-width: 1441px) {
+    /* Remover este media query */
+    }
+
+@media (max-width: 768px) {
+    /* Remover este media query */
+}
+
+@media (max-width: 420px) {
+    /* Remover este media query */
+}
+
+@media (min-width: 1001px) {
+    /* Remover este media query */
+}
+
+@media (min-width: 1201px) {
+    /* Remover este media query */
+}
+
+/* Desktop styles */
+@media (min-width: 1001px) {
+    .logo {
+        height: 70px;
+    }
+
+    .quote {
+        font-size: 1.5em;
+    }
+
+    .social-flags a, .dropdown i, .dropdown-content span {
+        font-size: 1.5em;
+    }
+
+    .card {
+        width: 70%;
+        aspect-ratio: 1920 / 622; /* Ajustar a proporção dos cards em desktop */
+    }
+
+    .card-front {
+        background-size: contain;
+    }
+
+    .card-back h3, .card-back p {
+        font-size: 1.3em;
+    }
+
+    .game-links a {
+        font-size: 1.2em;
+        padding: 5px 15px;
+    }
+
+    .game-links i {
+        font-size: 1.5em;
+    }
+
+    .card.is-flipped {
+        transform: none;
+    }
+
+    .card.is-flipped .card-back {
+        opacity: 0;
+    }
+}
+
+/* Estilos do Modal de Vídeo */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ajustes para mobile */
+@media (max-width: 1000px) {
+    .modal-content {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .close {
+        right: 10px;
+        top: 5px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 420px) {
+    .modal-content {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .close {
+        right: 5px;
+        top: 2px;
+        font-size: 20px;
+    }
+}
+
+.card-links a {
+    color: #333;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.card-links a:hover {
+    color: #666;
+}
+
+.itch-btn:hover {
+    color: #fa5c5c;
+}
+
+.x-btn:hover {
+    color: #000000;
+}
+
+.tiktok-btn:hover {
+    color: #000000;
+}
+
+/* Mobile styles */
+@media (max-width: 1000px) {
+    .card-links a {
+        font-size: 1.2em;
+        margin: 0 8px;
+    }
+}
+
